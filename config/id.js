@@ -15,11 +15,11 @@ const defaultOsmApiConnections = {
   live: {
     url: 'http://37.186.119.202:80',
     apiUrl: 'http://37.186.119.202:80',
-    client_id: 'R7e62Q8oFf-1j_cnYKOTvhKKElX2kKdHM92vmVzJKXo'
+    client_id: 'DZiYZOMHxR6ABMKizk6ycU9hkig35DfR7dXHffNRQaU'
   },
   dev: {
     url: 'http://37.186.119.202:80',
-    client_id: 'R7e62Q8oFf-1j_cnYKOTvhKKElX2kKdHM92vmVzJKXo'
+    client_id: 'DZiYZOMHxR6ABMKizk6ycU9hkig35DfR7dXHffNRQaU'
   }
 };
 const osmApiConnections = [];
@@ -30,7 +30,7 @@ if (ENV__ID_API_CONNECTION_URL !== null &&
   osmApiConnections.push({
     url: "http://37.186.119.202:80" || ENV__ID_API_CONNECTION_URL,
     apiUrl: "http://37.186.119.202:80" || ENV__ID_API_CONNECTION_API_URL || ENV__ID_API_CONNECTION_URL,
-    client_id: "R7e62Q8oFf-1j_cnYKOTvhKKElX2kKdHM92vmVzJKXo" || ENV__ID_API_CONNECTION_CLIENT_ID
+    client_id: "DZiYZOMHxR6ABMKizk6ycU9hkig35DfR7dXHffNRQaU" || ENV__ID_API_CONNECTION_CLIENT_ID
   });
 } else if (ENV__ID_API_CONNECTION !== null &&
   defaultOsmApiConnections[ENV__ID_API_CONNECTION] !== undefined) {

@@ -156,7 +156,7 @@ export function svgLines(projection, context) {
                     }
 
                     var oldMPClass = oldMultiPolygonOuters[d.id] ? 'old-multipolygon ' : '';
-                    return prefix + ' ' + klass + ' ' + selectedClass + oldMPClass + d.id + ` zone-${d.tags.zone}`;
+                    return prefix + ' ' + klass + ' ' + selectedClass + oldMPClass + d.id + ` zone-${d.tags.zone.toString().toLowerCase()}`;
                 })
                 .classed('added', function(d) {
                     return !base.entities[d.id];

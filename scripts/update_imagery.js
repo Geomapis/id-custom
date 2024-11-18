@@ -183,5 +183,5 @@ sources.features.forEach(feature => {
 
 imagery.sort((a, b) => a.name.localeCompare(b.name));
 
-fs.writeFileSync('data/imagery.json', prettyStringify(imagery));
+fs.writeFileSync('dist/data/imagery.json', prettyStringify(imagery));
 fs.writeFileSync('dist/data/imagery.min.json', JSON.stringify(imagery));

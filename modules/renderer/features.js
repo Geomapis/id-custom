@@ -104,16 +104,33 @@ export function rendererFeatures(context) {
     }
 
     defineRule('zone3', function isZone3(tags) {
-        return tags.zone === '3' || tags.name === "Zone 3";
+        return tags.zone && tags.zone.includes('3');
     });
-
+    
     defineRule('zone4', function isZone4(tags) {
-        return tags.zone === '4' || tags.name === "Zone 4";
+        return tags.zone && tags.zone.includes('4');
     });
+    
+    defineRule('zone2A', function isZone2A(tags) {
+        return tags.zone && tags.zone.includes('2A');
+    });
+    
+    defineRule('zone2B', function isZone2B(tags) {
+        return tags.zone && tags.zone.includes('2B');
+    });
+    
+    defineRule('zone2C', function isZone2C(tags) {
+        return tags.zone && tags.zone.includes('2C');
+    });
+    
+    defineRule('zone2D', function isZone2D(tags) {
+        return tags.zone && tags.zone.includes('2D');
+    });
+    
 
-    defineRule('points', function isPoint(tags, geometry) {
-        return geometry === 'point';
-    }, 200);
+    // defineRule('points', function isPoint(tags, geometry) {
+    //     return geometry === 'point';
+    // }, 200);
 
     // defineRule('traffic_roads', function isTrafficRoad(tags) {
     //     return traffic_roads[tags.highway];
@@ -127,15 +144,15 @@ export function rendererFeatures(context) {
     //     return paths[tags.highway];
     // });
 
-    defineRule('buildings', function isBuilding(tags) {
-        return (
-            (!!tags.building && tags.building !== 'no') ||
-            tags.parking === 'multi-storey' ||
-            tags.parking === 'sheds' ||
-            tags.parking === 'carports' ||
-            tags.parking === 'garage_boxes'
-        );
-    }, 250);
+    // defineRule('buildings', function isBuilding(tags) {
+    //     return (
+    //         (!!tags.building && tags.building !== 'no') ||
+    //         tags.parking === 'multi-storey' ||
+    //         tags.parking === 'sheds' ||
+    //         tags.parking === 'carports' ||
+    //         tags.parking === 'garage_boxes'
+    //     );
+    // }, 250);
 
     // defineRule('building_parts', function isBuildingPart(tags) {
     //     return !!tags['building:part'];
@@ -213,9 +230,9 @@ export function rendererFeatures(context) {
     //         tags.aerialway !== 'station';
     // });
 
-    defineRule('power', function isPower(tags) {
-        return !!tags.power;
-    });
+    // defineRule('power', function isPower(tags) {
+    //     return !!tags.power;
+    // });
 
     // contains a past/future tag, but not in active use as a road/path/cycleway/etc..
     // defineRule('past_future', function isPastFuture(tags) {

@@ -6028,10 +6028,32 @@ g.note .shadow {
     display: none !important;
 } */
 
+.points .zone-2a .shadow,
+path.shadow.zone-2a{
+    stroke: #00fff0 !important;
+}
+
+.points .zone-2b .shadow,
+path.shadow.zone-2b{
+    stroke: #fff000 !important;
+}
+
+.points .zone-2c .shadow,
+path.shadow.zone-2c{
+    stroke: #dd00ff !important;
+}
+
+.points .zone-2d .shadow,
+path.shadow.zone-2d{
+    stroke: #f0000f !important;
+}
+
+.points .zone-3 .shadow,
 path.shadow.zone-3{
     stroke: #0000ff !important;
 }
 
+.points .zone-4 .shadow,
 path.shadow.zone-4{
     stroke: #00ff00 !important;
 }

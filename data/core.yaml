@@ -895,6 +895,18 @@ en:
     zone4:
       description: "Zone 4"
       tooltip: "Disable Zone 4"
+    zone2A:
+      description: "Zone 2A"
+      tooltip: "Disable Zone 2A"
+    zone2B:
+      description: "Zone 2B"
+      tooltip: "Disable Zone 2B"
+    zone2C:
+      description: "Zone 2C"
+      tooltip: "Disable Zone 2C"
+    zone2D:
+      description: "Zone 2D"
+      tooltip: "Disable Zone 2D"
     points:
       description: Points
       tooltip: "Points of Interest"

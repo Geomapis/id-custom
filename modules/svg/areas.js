@@ -172,7 +172,8 @@ export function svgAreas(projection, context) {
             .merge(paths)
             .each(function(entity) {
                 var layer = this.parentNode.__data__;
-                this.setAttribute('class', entity.type + ' area ' + layer + ` zone-${entity.tags.zone} ` + entity.id);
+                const zoneClass = ` zone-${entity.tags.zone.toString().toLowerCase()} `;
+                this.setAttribute('class', entity.type + ' area ' + layer + zoneClass + entity.id);
 
                 if (layer === 'fill') {
                     this.setAttribute('clip-path', 'url(#ideditor-' + entity.id + '-clippath)');
