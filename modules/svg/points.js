@@ -98,7 +98,7 @@ export function svgPoints(projection, context) {
 
         var enter = groups.enter()
             .append('g')
-            .attr('class', function(d) { return `node point zone-${d.tags?.zone?.toString().toLowerCase() || ''}` + d.id; })
+            .attr('class', function(d) {return `node point zone-${d.tags?.zone?.toString().toLowerCase() || ''} ` + d.id; })
             .order();
 
         enter
