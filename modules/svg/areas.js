@@ -172,9 +172,10 @@ export function svgAreas(projection, context) {
             .merge(paths)
             .each(function(entity) {
                 var layer = this.parentNode.__data__;
-                const zoneClass = ` zone-${entity.tags?.zone?.toString().toLowerCase() || ''} `;
-                this.setAttribute('class', entity.type + ' area ' + layer + zoneClass + entity.id);
+                let zoneClass = ` zone-${entity.tags?.zone?.toString().toLowerCase() || ''} `;
+				zoneClass = ' ' + zoneClass.split(';')[0] + ' ';
 
+                this.setAttribute('class', entity.type + ' area ' + layer + zoneClass + entity.id);
                 if (layer === 'fill') {
                     this.setAttribute('clip-path', 'url(#ideditor-' + entity.id + '-clippath)');
                     this.style.fill = this.style.stroke = getPatternStyle(entity.tags);
