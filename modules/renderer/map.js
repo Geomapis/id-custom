@@ -686,7 +686,7 @@ export function rendererMap(context) {
         }
 
         // OSM
-        if (map.editableDataEnabled() || map.isInWideSelection()) {
+        if (zoom >= 18 && (map.editableDataEnabled() || map.isInWideSelection())) {
             context.loadTiles(projection);
             drawEditable(difference, extent);
         } else {
