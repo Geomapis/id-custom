@@ -156,7 +156,11 @@ export function svgLines(projection, context) {
                     }
 
                     var oldMPClass = oldMultiPolygonOuters[d.id] ? 'old-multipolygon ' : '';
-                    return prefix + ' ' + klass + ' ' + selectedClass + oldMPClass + d.id + ` zone-${d.tags?.zone?.toString().toLowerCase() || ''} `;
+
+					let zoneClass = ` zone-${d.tags?.zone?.toString().toLowerCase() || ''} `;
+					zoneClass = ' ' + zoneClass.split(';')[0] + ' ';
+
+                    return prefix + ' ' + klass + ' ' + selectedClass + oldMPClass + d.id + zoneClass;
                 })
                 .classed('added', function(d) {
                     return !base.entities[d.id];

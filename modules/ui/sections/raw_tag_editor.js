@@ -309,7 +309,9 @@ export function uiSectionRawTagEditor(id, context) {
                 .attr('class', 'point-images')
                 .append('img')
                 .attr('src', () => {
-                        const imageURL = `./images/Zone${_tags.zone}/${_tags.Code}.jpg`;
+						let zoneClass = _tags.zone?.split(';')[0] || '';
+						let code = _tags.Code?.split(';')[0] || '';
+                        const imageURL = `./images/Zone${zoneClass}/${code}.jpg`;
 
                         const imgTest = new Image();
                         imgTest.src = imageURL;
@@ -332,7 +334,9 @@ export function uiSectionRawTagEditor(id, context) {
             updateImage();
 
         function updateImage() {
-            const imageURL = `./images/Zone${_tags.zone}/${_tags.Code}.jpg`;
+			let zoneClass = _tags.zone?.split(';')[0] || '';
+			let code = _tags.Code?.split(';')[0] || '';
+			const imageURL = `./images/Zone${zoneClass}/${code}.jpg`;
         
             if (image.attr('src') !== imageURL) {
                 const imgTest = new Image();

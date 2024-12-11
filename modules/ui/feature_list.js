@@ -44,76 +44,14 @@ export function uiFeatureList(context) {
         searchWrap
             .call(svgIcon('#iD-icon-search', 'pre-text'));
 
-        const searchTags = ["Search by: Name or Type_AR"];
-
-        const dropDownMenu = selection.append('div')
-            .attr('class', 'dropdown-content')
-            .style('display', 'none');
-
-        var search = searchWrap //TODO
+        var search = searchWrap
             .append('input')
             .attr('placeholder', t('inspector.search'))
             .attr('type', 'search')
             .call(utilNoAuto)
             .on('keypress', keypress)
             .on('keydown', keydown)
-            .on('focus', () => {
-                dropDownMenu.style('display', 'block');
-
-                if (services.geocoder) {
-                    list.selectAll('.geocode-item')
-                        .data([0])
-                        .enter()
-                        .append('button')
-                        .attr('class', 'geocode-item secondary-action')
-                        .on('click', geocoderSearch)
-                        .append('div')
-                        .attr('class', 'label')
-                        .append('span')
-                        .attr('class', 'entity-name')
-                        .call(t.append('geocoder.search'));
-                }
-
-                list.select('.geocode-item')
-                .style('display', 'block');
-            })
-            .on('blur', () => {
-                // list.selectAll('.geocode-item').remove();
-                setTimeout(() => {
-                    dropDownMenu.style('display', 'none');
-                }, 100);
-            })
-            // .on('input', inputevent);
-
-        dropDownMenu.selectAll('.dropdown-item')
-            .data(searchTags)
-            .enter()
-            .append('div')
-            .attr('class', 'dropdown-item')
-            .text(d => d);
-
-        // const pointImagesDiv = selection.append('div')
-        //     .attr('class', 'point-images-div')
-        //     .style('display', 'block');
-
-        
-        // pointImagesDiv.append('img')
-        //     .attr('src', d => {
-        //         console.log();
-        //         return `./Zone3/Images/26.jpg`
-        //     })
-        //     .attr('class', 'point-image')
-        //     .attr('width', 100)
-        //     .attr('height', 100);
-
-        // const points = [
-        //     { name: '26', x: 100, y: 100 },
-        //     { name: 'point2', x: 200, y: 200 },
-        //     { name: 'point3', x: 300, y: 300 },
-        // ];
-        // const pointResults = features();
-
-
+            .on('input', inputevent);
 
         var listWrap = selection
             .append('div')
@@ -309,11 +247,6 @@ export function uiFeatureList(context) {
         function drawList() {
             var value = search.property('value');
             var results = features();
-            // console.log("before:");
-            // console.log(results);
-            results = results.filter(result => result.type === "Amenity" || result.type === "point" );
-            // console.log("after:");
-            // console.log(results);
 
             list.classed('filtered', value.length);
 
