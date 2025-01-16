@@ -83,7 +83,7 @@ export default {
     search: function (val, callback) {
         const params = {
             q: val,
-            limit:10,
+            limit:100,
             format: 'json'
         };
         var url = apibase + 'search?' + utilQsString(params);
